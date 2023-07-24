@@ -15,7 +15,7 @@ This lesson goes over the Javascript basics, showing that JavaScript is used as 
 - Enter into the console ```document.body.innerHTML = 'hello';```, and we see the whole webpage change to display the text 'hello'.
   - This accesses into the HTML of the <body> of the webpage and re-write it all to 'hello'
 
-## Exercises for Lesson 1 - JavaScript Basics
 
-![Exercises 1a-1e](Lesson1-Ex1.png)
-![Exercises 1f-1j](Lesson1-Ex2.png)
+## Exercises for Lesson 1 - JavaScript Basics
+![Exercises 1a-1e](/ExPics/Lesson1-Ex1.png)
+![Exercises 1f-1j](/ExPics/Lesson1-Ex2.png)
