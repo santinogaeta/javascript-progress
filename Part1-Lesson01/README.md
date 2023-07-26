@@ -17,5 +17,5 @@ This lesson goes over the Javascript basics, showing that JavaScript is used as 
 
 
 ## Exercises for Lesson 1 - JavaScript Basics
-![Exercises 1a-1e](/p1-lesson1/ExPics/Lesson1-Ex1.png)
-![Exercises 1f-1j](/p1-lesson1/ExPics/Lesson1-Ex2.png)
+![Exercises 1a-1e](/Part1-Lesson01/ExPics/Lesson1-Ex1.png)
+![Exercises 1f-1j](/Part1-Lesson01/ExPics/Lesson1-Ex2.png)
