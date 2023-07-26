@@ -18,5 +18,6 @@
     - ```Math.round((2095 + 799) * 0.1) / 100```, now resulting in ```2.89```
 
 ## Exercises for Lesson 2 - Numbers and Math
-![Exercises]()
-![Exercises]()
+![Exercises2a-2e](/Part1-Lesson02/ExPics/Lesson2-Ex1.png)
+![Exercises2f-2i](/Part1-Lesson02/ExPics/Lesson2-Ex2.png)
+![Exercises2j-2n](/Part1-Lesson02/ExPics/Lesson2-Ex3.png)
