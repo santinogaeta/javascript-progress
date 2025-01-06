@@ -25,6 +25,6 @@
 - New line character "\n"
 
 ## Exercises for Lesson 3 - Strings
-![Exercises2a-2e]()
-![Exercises2f-2i]()
-![Exercises2j-2n]()
+![Exercises3a-3f](Lesson03/ExPics/Lesson3-Ex1.png)
+![Exercises3g-3j](Lesson03/ExPics/Lesson3-Ex2.png)
+![Exercises3k-3n](Lesson03/ExPics/Lesson3-Ex3.png)
