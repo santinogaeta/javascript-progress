@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Lesson5 Exercises - Variables
+    </title>
+    <style>
+      div {
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p>
+      Cart Quantity
+    </p>
+    
+    <div>
+      <button onclick = "
+      console.log(quantity);
+    ">Show Quantity</button>
+  
+    <button onclick = "
+      quantity++; 
+      console.log(quantity);
+    ">Add to Cart</button>
+    </div>
+    
+    <div>
+      <button onclick = "
+      quantity += 2; 
+      console.log(quantity);
+    ">+2</button>
+  
+    <button onclick = "
+      quantity += 3; 
+      console.log(quantity);
+    ">+3</button>
+
+    <button onclick = "
+      quantity += 4; 
+      console.log(quantity);
+    ">+4</button>
+
+    <button onclick = "
+      quantity += 5; 
+      console.log(quantity);
+    ">+5</button>
+    </div>
+    
+    <div>
+      <button onclick = "
+      quantity -= 1; 
+      console.log(quantity);
+    ">Remove from Cart</button>
+
+    <button onclick = "
+      quantity -= 2; 
+      console.log(quantity);
+    ">-2</button>
+
+    <button onclick = "
+      quantity -= 3; 
+      console.log(quantity);
+    ">-3</button>
+  
+    <button onclick = "
+      quantity = 0; 
+      console.log(quantity);
+    ">Reset Cart</button>
+    </div>
+
+    
+
+    <script>
+      let quantity = 0;
+      let name = 'Santino';
+      console.log('My name is ' + name);
+      const coffee = 5;
+      const bagel = 3;
+      const soup = 9;
+      let cost = (coffee + (2 * bagel) + soup);
+      let tax = cost * 0.1;
+      let totalCost = cost + tax
+      console.log(`Cost of food: $${cost}
+      Tax (10%): $${tax}
+      Total cost: $${totalCost}`);
+    </script>
+  </body>
+</html>
