@@ -1,0 +1,41 @@
+<!--Emulating the example shown on the Variable section of the video-->
+
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Cart Quantity
+  </title>
+</head>
+
+<body>
+
+  <p>
+    Cart Quantity
+  </p>
+
+  <button onclick = "
+    console.log(quantity);
+  ">Show Quantity</button>
+
+  <button onclick="quantity++; console.log(quantity);">
+    Add to Cart
+  </button>
+
+  <button onclick="quantity += 2; console.log(quantity);">
+    +2
+  </button>
+
+  <button onclick="quantity += 3; console.log(quantity);">
+    +3
+  </button>
+
+  <button onclick="quantity = 0; console.log(quantity);">
+    Reset Cart
+  </button>
+
+  <script>
+    let quantity = 0
+  </script>
+
+</body>
