@@ -1,4 +1,4 @@
-# Part 1 Lesson 6 - Functions
+# Part 1 Lesson 7 - Functions
 
 - Went to SuperSimpleDev's JS Practice [Website](https://supersimple.dev/projects/amazon/checkout) to practice using the console to add the prices of the items in the cart
 
@@ -31,7 +31,7 @@ function1(); - will call the function above
 eg function calculateTax(cost, taxPercent = 0.1){...}
 
 ## Exercises for Lesson 7
-![Exercises6a-4c]()
-![Exercises6d-6e]()
-![Exercises6f-6j]()
-![Exercises6k-6l]()
+![Exercises7a-7c]()
+![Exercises7d-7f]()
+![Exercises7g-7i]()
+![Exercises7j-7l]()
