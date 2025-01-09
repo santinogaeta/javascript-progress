@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Lesson7 Exercise - Functions
+  </title>
+</head>
+
+<body>
+
+  <script>
+
+    function greet(name) {
+      if(name){
+        console.log(`Hello, ${name}!`);
+      }
+    }
+
+    greet('Santino');
+    greet(); //will not display anything since greet() will not trigger when undefined(falsy) passed
+
+    function convertToFahrenheit(celcius){
+      return ((celcius * 9) / 5) + 32
+    };
+
+    function convertToCelcius(fahrenheit){
+      return ((fahrenheit - 32) * 5) / 9
+    }
+
+    function convertTemperature(degrees, unit){
+      if(unit === 'C'){
+        return `${convertToFahrenheit(degrees)}F`
+      } else {
+        return `${convertToCelcius(degrees)}C`
+      }
+    };
+
+    console.log(convertToFahrenheit(25));
+    console.log(convertToCelcius(86));
+    console.log(convertTemperature(25, 'C'));
+    console.log(convertTemperature(86,'F'));
+
+    function convertLength(length, from, to){
+      if(from === 'km'){
+        if (from === to) {
+          return `${length} ${to}`;
+        } else if (to === 'miles'){
+          return `${length/1.6} miles`;
+        } else if (to === 'ft'){
+          return `${length * 3281} ft`;
+        } else {
+          return `The following unit ${to} is invalid for conversion`;
+        }
+      } else if(from === 'miles'){
+        if (from === to) {
+          return `${length} ${to}`;
+        } else if(to === 'km'){
+          return `${length * 1.6} km`;
+        } else if (to === 'ft'){
+          return `${length * 5280} ft`;
+        } else {
+          return `The following unit ${to} is invalid for conversion`;
+        }
+      } else if (from === 'ft'){
+        if (from === to) {
+          return `${length} ${to}`;
+        } else if (to === 'miles'){
+          return `${length/5280} miles`;
+        } else if (to === 'km'){
+          return `${length / 3281} km`;
+        } else {
+          return `The following unit ${to} is invalid for conversion`;
+        }
+      }
+      else {
+        return `The following unit (${from}) is invalid for conversion`;
+      }
+    }
+
+    console.log(convertLength(50, 'miles', 'km'));
+    console.log(convertLength(32, 'km', 'miles'));
+    console.log(convertLength(50, 'km', 'km'));
+    console.log(convertLength(5, 'miles', 'km'));
+    console.log(convertLength(5, 'miles', 'ft'));
+    console.log(convertLength(5, 'km', 'ft'));
+    console.log(convertLength(50, 'lbs', 'lbs'));
+
+
+  </script>
+
+</body>

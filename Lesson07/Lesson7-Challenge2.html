@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Lesson7 Challenge - Functions
+    </title>
+    <style>
+      div {
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p>
+      Cart Quantity
+    </p>
+    
+    <div>
+      <button onclick = "
+      console.log(quantity);
+    ">Show Quantity</button>
+  
+    <button onclick = "
+        updateCartQuantity(1);
+    ">Add to Cart</button>
+    </div>
+    
+    <div>
+      <button onclick = "
+        updateCartQuantity(2);
+    ">+2</button>
+  
+    <button onclick = "
+        updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick = "
+        updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick = "
+        updateCartQuantity(5);
+    ">+5</button>
+    </div>
+    
+    <div>
+      <button onclick = "
+        updateCartQuantity(-1);
+    ">Remove from Cart</button>
+
+    <button onclick = "
+        updateCartQuantity(-2);
+    ">-2</button>
+
+    <button onclick = "
+        updateCartQuantity(-3);
+    ">-3</button>
+  
+    <button onclick = "
+      quantity = 0; 
+      console.log(quantity);
+    ">Reset Cart</button>
+    </div>
+
+    <script>
+      let quantity = 0;
+
+      function updateCartQuantity(amount){
+        if(quantity + amount < 0 || quantity + amount > 10){
+          alert(`Invalid input (amount cannot be negative or exceed 10 items)`);
+          return;
+        }
+        quantity += amount;
+        console.log(quantity);
+      }
+
+    </script>
+  </body>
+</html>
