@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Lesson8 Challenge - Objects Coin Flip
+    </title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+    <p>
+      Coin Flip Game
+    </p>
+    
+    <div>
+  
+      <button onclick = "
+        play('Heads');
+      ">Heads</button>
+      
+      <button onclick = "
+        play('Tails');
+      ">Tails</button>
+
+      <button onclick = "
+        reset()
+      ">Reset Score</button>
+  
+    </div>
+
+    <script>
+
+      let currentScore = JSON.parse(localStorage.getItem(('currentScore'))) || {
+        wins: 0,
+        losses: 0
+      };
+      //localStorage.setItem('currentScore', JSON.stringify(score));
+
+      function play(guess){
+        const coin = Math.random();
+        let result = coin < 0.5 ? 'Heads' : 'Tails';
+        if(result === guess){
+          currentScore.wins++;
+          console.log(currentScore);
+          console.log(`Coin flipped: ${result}, you Win! \nScore: ${currentScore.wins} Wins, ${currentScore.losses} Losses`);
+        } else {
+          currentScore.losses++;
+          console.log(currentScore);
+          console.log(`Coin flipped: ${result}, you Lose! \nScore: ${currentScore.wins} Wins, ${currentScore.losses} Losses`);
+        };
+        localStorage.setItem('currentScore', JSON.stringify(currentScore));
+      }
+
+      function reset(){
+        localStorage.removeItem('currentScore');
+        currentScore.wins = 0;
+        currentScore.losses = 0;
+        console.log(`Score reset! \nScore: ${currentScore.wins} Wins, ${currentScore.losses} Losses`)
+      }
+
+    </script>
+  </body>
+</html>
