@@ -1,0 +1,109 @@
+<!--Youtube Subscribe button, Rock Paper Scissors Game clickable link, and shipping calculator (self-guided as a challenge)-->
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Lesson9-DOM-Practical 
+  </title>
+  <style>
+
+    div{
+      padding-bottom: 25px;
+    }
+
+    button {
+      background-color: rgb(231, 227, 227);
+      border-style: solid;
+      border-color: black;
+      border-width: 1px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .rps-link {
+      text-decoration: underline;
+      color: blueviolet;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <p>
+      YouTube Subscribe Button
+    </p>
+    <button class = "subscribe-button" onclick = "
+      addSubscriber();
+      ">Subscribe</button>
+  </div>
+
+  <div>
+    <p>
+      Rock Paper Scissors
+    </p>
+    <p class = "rps-link" onclick = "
+      ">Click here</p>
+  </div>
+
+  <div>
+    <p>
+      Amazon Shipping Calculator
+    </p>
+    <p>
+      Orders under $40 = +$10 shipping.</p>
+      <p>
+        Orders $40 and over = FREE shipping.
+      </p>
+    </p>
+
+    <div>
+      <input type="text" placeholder="Cost of order" class="textbox" 
+        onkeydown="handleCostEvent(event.key)"> <!--passes the key that was pressed-->
+
+      <button class = "Calculate-button" onclick = "
+        calculate();
+      ">Calculate</button>
+      
+      <p class="cost-result"></p>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+    const subButtonElement = document.querySelector(".subscribe-button");
+    const textboxElement = document.querySelector(".textbox");
+    const costResultElement = document.querySelector(".cost-result");
+
+    function addSubscriber(){
+      subButtonElement.innerHTML === 'Subscribe' ? 
+        subButtonElement.innerHTML = 'Subscribed' : 
+        subButtonElement.innerHTML = 'Subscribe'
+    }
+
+    function calculate(){
+      let cost = Number(textboxElement.value);
+      if(cost === 0) {
+        costResultElement.innerHTML = `There is zero cost in the textbox.`
+      } else if(cost < 40) {
+        cost += 10;
+        costResultElement.innerHTML = `$${cost} (Shipping cost included)`
+      }else {
+        costResultElement.innerHTML = `$${cost} (FREE shipping included!)`
+      }
+    }
+
+    function handleCostEvent(key){
+      if(key === 'Enter'){
+        calculate();
+      }
+    }
+
+  </script>
+
+</body>
