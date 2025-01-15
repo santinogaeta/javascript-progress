@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Lesson7 Challenge - Functions
+    </title>
+    <style>
+      div {
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p class="cart-quantity">
+    </p>
+    
+    <div>
+      <button onclick = "
+      alert(`Cart Quantity: ${quantity}`)
+    ">Show Quantity</button>
+  
+    <button onclick = "
+        updateCartQuantity(1);
+    ">Add to Cart</button>
+    </div>
+    
+    <div>
+      <button onclick = "
+        updateCartQuantity(2);
+    ">+2</button>
+  
+    <button onclick = "
+        updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick = "
+        updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick = "
+        updateCartQuantity(5);
+    ">+5</button>
+    </div>
+    
+    <div>
+      <button onclick = "
+        updateCartQuantity(-1);
+    ">Remove from Cart</button>
+
+    <button onclick = "
+        updateCartQuantity(-2);
+    ">-2</button>
+
+    <button onclick = "
+        updateCartQuantity(-3);
+    ">-3</button>
+  
+    <button onclick = "
+      quantity = 0; 
+      localStorage.removeItem('quantity');
+      cartQuantity.innerHTML = `Cart Quantity: ${quantity}`;
+    ">Reset Cart</button>
+    </div>
+
+    <script>
+      let quantity = Number(localStorage.getItem('quantity')) || 0;
+      const cartQuantity = document.querySelector('.cart-quantity')
+
+      function updateCartQuantity(amount){
+        if(quantity + amount < 0 || quantity + amount > 10){
+          cartQuantity.innerHTML = `Cart Quantity: ${quantity} (Invalid input - amount cannot be negative or exceed 10 items)`;
+          return;
+        }
+        quantity += amount;
+        cartQuantity.innerHTML = `Cart Quantity: ${quantity}`;
+        localStorage.setItem('quantity', quantity);
+      }
+
+    </script>
+  </body>
+</html>

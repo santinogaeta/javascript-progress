@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Lesson9 Challenge - DOM Calculator 
+    </title>
+    <style>
+      div {
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p>
+      Calculator
+    </p>
+    
+    <div>
+  
+    <button onclick = "
+      updateCalc('1');
+    ">1</button>
+    
+    <button onclick = "
+      updateCalc('2');
+    ">2</button>
+  
+    <button onclick = "
+      updateCalc('3');
+    ">3</button>
+
+    </div>
+
+    <div>
+  
+      <button onclick = "
+        updateCalc('4');
+      ">4</button>
+      
+        <button onclick = "
+        updateCalc('5');
+      ">5</button>
+    
+      <button onclick = "
+        updateCalc('6');
+      ">6</button>
+  
+    </div>
+
+    <div>
+  
+      <button onclick = "
+        updateCalc('7');
+      ">7</button>
+      
+        <button onclick = "
+        updateCalc('8');
+      ">8</button>
+    
+      <button onclick = "
+        updateCalc('9');
+      ">9</button>
+  
+    </div>
+
+    <div>
+  
+      <button onclick = "
+        updateCalc('.');
+      ">.</button>
+      
+      <button onclick = "
+        updateCalc('0');
+      ">0</button>
+    
+      <button onClick = "
+        calculation = '';
+        localStorage.removeItem('calculation');
+        paraElement.innerHTML = 'Calculator Cleared';
+      ">Clear</button>
+  
+    </div>
+
+    <div>
+    <button onclick = "
+      updateCalc(' + ')
+    ">+</button>
+
+    <button onClick = "
+      updateCalc(' - ')
+    ">-</button>
+
+    <button onclick = "
+      let result = eval(calculation);
+      paraElement.innerHTML = calculation + ' = ' + result;
+      calculation = `${result}`;
+      localStorage.setItem('calculation', calculation);
+      paraElement.innerHTML += `<br>${calculation}`;
+    ">=</button>
+    
+    </div>
+   
+    <div>
+      <button onclick = "
+        updateCalc(' * ')
+      ">x</button>
+  
+      <button onClick = "
+        updateCalc(' / ')
+      ">/</button>
+      
+      </div>
+
+      <div>
+        <p class="live-calc"></p>
+      </div>
+    
+
+    <script>
+      let calculation = localStorage.getItem('calculation') || '';
+      const paraElement = document.querySelector('.live-calc');
+      
+      function updateCalc(operation){
+        calculation += operation;
+        paraElement.innerHTML = calculation;
+        localStorage.setItem('calculation', calculation);
+      }
+
+
+
+    </script>
+  </body>
+</html>

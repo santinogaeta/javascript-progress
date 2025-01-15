@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Lesson9 Exercise - DOM
+  </title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+    div{
+      margin-bottom: 25px;
+    }
+    .name-box {
+      border-color: grey;
+      border-style: solid;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    .submit-button {
+      border-style: solid;
+      background-color: lightgray;
+      border-color: grey;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <div> 
+    <button class="a-button">9a</button>
+    <button class="b-button">9b</button>
+  </div>
+
+  <div>
+    <button onclick="chose('heads')">heads</button>
+    <button onclick="chose('tails')">tails</button>
+    <p class="message"></p>
+  </div>
+
+  <div>
+    <input placeholder="Name" class="name-box" onkeydown="handleSubmit(event.key)">
+    <button class="submit-button" onclick="acceptName();">Submit</button>
+    <p class="name-message"></p>
+  </div>
+
+  <div>
+    <input type="text" placeholder="Cost of order" class="textbox" 
+      onkeydown="handleCostEvent(event.key)"> <!--passes the key that was pressed-->
+
+    <button class = "Calculate-button" onclick = "
+      calculate();
+    ">Calculate</button>
+    
+    <p class="cost-result"></p>
+  </div>
+
+  <div>
+    <input type="text" class="wordbox" placeholder="Enter word" 
+      onkeyup="handleTextEvent(event.key)">
+    <p class="live-update"></p>
+  </div>
+
+  <script>
+
+  const firstButton = document.querySelector('.a-button');
+  const secondButton = document.querySelector('.b-button');
+  secondButton.innerHTML = '9b done!';
+  const textboxElement = document.querySelector(".textbox");
+  const costResultElement = document.querySelector(".cost-result");
+  const liveUpdateElement = document.querySelector(".live-update");
+
+  function chose(choice){
+    document.querySelector('.message').innerHTML = `You chose: ${choice}`
+  }
+
+  function acceptName(){
+    const name = document.querySelector('.name-box');
+    document.querySelector('.name-message').innerHTML = `Your name is: ${name.value}`;
+  }
+
+  function handleSubmit(keyPressed){
+    if (keyPressed === 'Enter'){
+      acceptName();
+    }
+  }
+
+  function calculate(){
+      let cost = Number(textboxElement.value) * 100;
+      if(cost === 0) {
+        costResultElement.innerHTML = `There is zero cost in the textbox.`
+      } else if(cost < 4000) {
+        cost += 1000;
+        costResultElement.innerHTML = `$${cost / 100} (Shipping cost included)`
+      }else {
+        costResultElement.innerHTML = `$${cost / 100} (FREE shipping included!)`
+      }
+    }
+
+    function handleCostEvent(key){
+      if(key === 'Enter'){
+        calculate();
+      }
+    }
+
+    function handleTextEvent(key) {
+      liveUpdateElement.innerHTML += key;
+    }
+
+  </script>
+
+</body>
