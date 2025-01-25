@@ -1,0 +1,69 @@
+body {
+  font-family: Arial;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.amazon-button {
+  background-color: rgb(255,216,20);
+  border-radius: 15px;
+  padding: 5px 35px;
+  font-size:small;
+}
+
+.grey-button {
+  background-color: rgb(230,230,230);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.gaming-button, .music-button, .tech-button {
+  background-color: rgb(230,230,230);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.black-button {
+  background-color: black;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+.calculate-div {
+  display: flex;
+  align-items: center;
+}
+
+.textbox {
+  padding: 8px 0px 8px 8px;
+  font-size:small;
+  margin-right: 5px;
+}
+
+.calculate-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.cost-result {
+  color: black;
+}
+
+.error-message {
+  color: red;
+}

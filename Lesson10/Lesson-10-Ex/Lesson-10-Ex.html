@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Lesson10 Exercise - HTML CSS JS together
+  </title>
+  <link rel="stylesheet" href="Lesson-10-Ex.css">
+</head>
+
+<body>
+  
+  <div>
+    <button class="amazon-button">
+      Add to Cart
+    </button>
+  </div>
+
+  <div>
+    <button class="black-button">
+      Request now
+    </button>
+    <button class="grey-button">
+      Schedule for later
+    </button>
+  </div>
+
+  <div>
+    <button class="js-button" onclick="isClass()">
+      Test
+    </button>
+  </div>
+
+  <div>
+    <button class="gaming-button" onclick="changeColour('.gaming')">
+      Gaming
+    </button>
+    <button class="music-button" onclick="changeColour('.music')">
+      Music
+    </button>
+    <button class="tech-button" onclick="changeColour('.tech')">
+      Tech
+    </button>
+  </div>
+
+
+  <div>
+    <p>
+      Amazon Shipping Calculator
+    </p>
+    <p>
+      Orders under $40 = +$10 shipping.</p>
+      <p>
+        Orders $40 and over = FREE shipping.
+      </p>
+    </p>
+
+    <div class="calculate-div">
+      <input type="text" placeholder="Cost of order" class="textbox" 
+        onkeydown="handleCostEvent(event.key)"> <!--passes the key that was pressed-->
+
+      <button class = "calculate-button" onclick = "
+        calculate();
+      ">Calculate</button>
+
+      <p class="cost-result"></p>
+      <p class="error-message"></p>
+      
+    </div> 
+
+   
+
+  <script src="Lesson-10-Ex.js"></script>
+
+</body>
