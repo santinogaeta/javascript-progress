@@ -64,6 +64,10 @@
       cursor: pointer;
     }
 
+    .error-message {
+      color: red;
+    } 
+
   </style>
 </head>
 
@@ -122,6 +126,7 @@
     const subButtonElement = document.querySelector(".subscribe-button");
     const textboxElement = document.querySelector(".textbox");
     const costResultElement = document.querySelector(".cost-result");
+    const errorMessageElement = document.querySelector(".error-message");
 
     function addSubscriber(){
       if(subButtonElement.innerHTML === 'Subscribe') {
@@ -135,13 +140,20 @@
 
     function calculate(){
       let cost = Number(textboxElement.value);
-      if(cost === 0 || isNaN(cost)) {
-        costResultElement.innerHTML = `There is invalid cost in the textbox.`
-      } else if(cost < 40) {
+      if(isNaN(cost)) {
+        costResultElement.innerHTML = ``;
+        errorMessageElement.innerHTML = `There is invalid cost in the textbox.`
+      } else if(cost <= 0) {
+        costResultElement.innerHTML = ``;
+        errorMessageElement.innerHTML = `Error: $${cost} cannot be zero or negative.`
+      }
+      else if(cost < 40) {
         cost += 10;
         costResultElement.innerHTML = `$${cost} (Shipping cost included)`
+        errorMessageElement.innerHTML = ``
       }else {
         costResultElement.innerHTML = `$${cost} (FREE shipping included!)`
+        errorMessageElement.innerHTML = ``
       }
     }
 
