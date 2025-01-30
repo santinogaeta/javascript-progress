@@ -39,8 +39,51 @@
 
 # Lesson 11 Part 2 begins
 
+- DESTRUCTURING (Shortcut for Objects)
+- if variable name is same as the property name for an object (eg const name = list.name):
+- const { name } = list; - take the name propoerty out of the object and puts it in the name variable
+- can also do multiple values from the same object: const {name, dueDate} = list;
+
+# CSS Grids
+- display: grid; - used to specify a <div> element to be lined up in a grid formation
+- grid-template-column: ~px ~px ~px - configure as many columnswith the amount of px you want each column width to be 
+- align-items: center - will center vertically all emelents in the row
+- align-items: stretch - this is the default align setting, where the elements will stretch to be the same as each other
+
+# Arrays are references
+- so can create a const array, and still push and splice, as this is just a reference to the array stored in computer's memory
+- copying a copy of the reference (array2 = array; array.push(3);) console.log both will both show 3 for each as the array has pushed 3, and array2 points to array which had value changed
+
+- const array2 = array.slice() - will copy the values from array and is no longer a reference, so anything that affects array, will not reflect on array2
+
+# Desctructuring
+- const [firstValue, secondValue] = [1, 2, 3] - will not just set the array but will assign the first and second values of the array to the deconstructed variables specified
+
+# loop shortcuts
+- use break to exit a loop early before the loop condition is met
+- continue lets us skip all code below it and skip to the next iteration of the loop
+- eg for (let i = 1; i<10; i++){
+if (i === 3) {
+  continue;
+}
+console.log(i);
+}
+- above shows that when i is 3, to skip the console.log code and move to the next iteration
+
+- checking if something is divisible by a number using the remained operator %
+- if i % 3 === 0 - it IS divisible by 3,
+- if i % 3 === 1 - it is not (eg 7 % 3 === 1)
+
+- in a while loop, when using continue, you must do the iteration (i++) manually before the continue executes
+
+ 
+
 ## Exercises for Lesson 11
-![Exercises10a-10c]()
-![Exercises10d-10f]()
-![Exercises810g-10h]()
-![Exercises810i-10j]()
+![Exercises11a-11c]()
+![Exercises11d-11h]()
+![Exercises11i-11k]()
+![Exercises11l-11n]()
+![Exercises11o-11q]()
+![Exercises11r-11t]()
+![Exercises11u-11v]()
+![Exercises11w-11x]()

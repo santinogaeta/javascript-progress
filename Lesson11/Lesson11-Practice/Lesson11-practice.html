@@ -11,13 +11,14 @@
 </head>
 
 <body>
-  <div>
-    <p>Todo List Practice 1</p>
+    <p>Todo List</p>
+    <div class="todo-grid">
     <input type="text" placeholder="Todo name" class="todo-textbox"
       onkeydown="handleToDoEvent(event.key)">
-    <button onclick="addToDoItem()">Add</button>
+    <input type="date" class="date-box">
+    <button class="add-button" onclick="addToDoItem()">Add</button>
   </div>
-  <div>
+  <div class="todo-input-grid">
     <p class="todo-list"></p>
   </div>
 
