@@ -1,0 +1,28 @@
+<!--Ramping up Todolist exercise (first attempt without guidance as challenge)-->
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Lesson11- Arrays and Loops
+  </title>
+
+  <link rel="stylesheet" href="Lesson11b-todo.css">
+
+</head>
+
+<body>
+    <p>Todo List</p>
+    <div class="todo-grid">
+    <input type="text" placeholder="Todo name" class="todo-textbox"
+      onkeydown="handleToDoEvent(event.key)">
+    <input type="date" class="date-box">
+    <button class="add-button" onclick="addToDoItem()">Add</button>
+  </div>
+  <div class="todo-input-grid">
+    <p class="todo-list"></p>
+  </div>
+
+
+  <script src="Lesson11b-todo.js"></script>
+
+</body>
