@@ -1,6 +1,12 @@
+/* Added Autoplay function, and arrow functions, and add/remove EventListeners to simplify code*/
+
 let result = '';
 let resultMessage = document.querySelector(".result-message");
-let autoPlayButton = document.querySelector(".autoplay-button");
+const autoPlayButton = document.querySelector(".autoplay-button");
+const rockButton = document.querySelector(".rock-button");
+const paperButton = document.querySelector(".paper-button");
+const scissorsButton = document.querySelector(".scissors-button");
+const resetButton = document.querySelector(".reset-button");
 let isAutoplay = false;
 let intervalID;
 
@@ -13,6 +19,26 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 let scoreMessage = document.querySelector(".score-message");
 updateScore();
 
+const rockMove = rockButton.addEventListener('click', () => {
+  play('rock', pickComputerMove())
+});
+
+const paperMove = paperButton.addEventListener('click', () => {
+  play('paper', pickComputerMove())
+});
+
+const scissorsMove = scissorsButton.addEventListener('click', () => {
+  play('scissors', pickComputerMove())
+});
+
+resetButton.addEventListener('click', () => {
+  resetScore();
+});
+
+autoPlayButton.addEventListener('click', () => {
+  autoPlay();
+});
+
 function pickComputerMove(){
   let pick = Math.random(); 
   if(pick < (1/3)){
@@ -22,7 +48,7 @@ function pickComputerMove(){
   } else {
   return 'scissors';
   };
-}
+};
 
 function play(playerMove, computerMove){
   if (playerMove === 'rock'){
@@ -64,7 +90,7 @@ function play(playerMove, computerMove){
   localStorage.setItem('score', JSON.stringify(score));
   resultMessage.innerHTML = `You chose <img class="small-img" src="rps-images/${playerMove}-emoji.png">, the Computer chose <img class="small-img" src="rps-images/${computerMove}-emoji.png">, you ${result}!`;
   updateScore();
-}
+};
 
 function resetScore() {
   score.winTotal = 0;
@@ -73,7 +99,7 @@ function resetScore() {
   localStorage.removeItem('score');
   resultMessage.innerHTML = `Score has been reset!`;
   updateScore();
-}
+};
 
 function autoPlay() {
   if(isAutoplay){
@@ -84,11 +110,11 @@ function autoPlay() {
   }
   isAutoplay = true;
   autoPlayButton.innerHTML = 'Stop Play';
-  intervalID = setInterval(function(){
+  intervalID = setInterval(() => {
     play(pickComputerMove(),pickComputerMove())
   }, 1000);
-}
+};
 
 function updateScore() {
   scoreMessage.innerHTML = `Wins: ${score.winTotal}, Losses: ${score.loseTotal}, Draws: ${score.drawTotal}`;
-}
+};

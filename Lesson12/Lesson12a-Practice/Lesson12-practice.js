@@ -1,4 +1,4 @@
-/* Changing for-loop by using .forEach()*/
+/* Changing for-loop by using .forEach() and implementing arrowFunctions were applicable*/
 
 const toDoList = JSON.parse(localStorage.getItem('list')) || [];
 const toDoBoxElement = document.querySelector('.todo-textbox');
@@ -28,7 +28,7 @@ function removeItem(index){
 
 function renderList(){
   let list='';
-  toDoList.forEach(function(toDoObject, index){
+  toDoList.forEach((toDoObject, index) => {
     const {name, date} = toDoObject;
     list += `
     <div class="todo-input-grid">

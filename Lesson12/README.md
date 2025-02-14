@@ -44,6 +44,41 @@
 - with .forEach(), instead of using continue to skip an iteration, use return
 - with .forEach() there is no way to break out of a loop early if a certain condition is met. Therefore just use a regular for-loop if needed
 
+## Lesson 12 Part 1 ends
+
+# Lesson 12 Part 2 Begins
+
+# Arrow Functions
+- eg. const arrowFunction = () => {console.log('hello')}; then call like any other function: arrowFunction();
+- paramas and return statements work the same way: const arrowFunction = (param1, param2) => {console.log('hello'); return 5;};
+- if there's only one parameter - don't need the brackets:
+- const oneParam = param => {[function]}
+- If arrow function is one line, don't need the curly brakets or return statement (if needed):
+- const oneLine = param1 => 5 + param1;
+- can use arrowFunctions in .forEach() loops
+- eg todoList.forEach((value,index) => {
+  if ( value === 'wash dishes'){return;}
+})
+- cannot hoist when using Arrow Functions (calling function before defining it in order of code)
+
+- Can use arrowfunctions inside an object, as well as a term called shorthand method syntax:
+const object2 = {
+  method1: () => {[function]}, - arrow function
+  method(){[function]} - shorthand method syntax
+}
+
+# .addEventListner()
+- Lets us run some code when we interact with the element (using document.querySelector([element]))
+- take two parameters, the 'event' to look out for (eg. 'click' like 'onclick'), then the 'function' to run once clicked
+- eg. buttonElement.addEventListener('click', () => console.log('click'));
+- the positive for using this as opposed to onclick='' in html file, is that we can add multiple event listeners for an event
+- can aldo remove an event listener using .removeEventListener([event], [function triggered by event])
+- we cannot write the entire arrowFunction in .removeEventListener, so we must assign arrowFunction to a variable
+
+- best practice to use .addEventListener, rather than onclick='' in html attributes
+
+
+
 ## Exercises for Lesson 12
 ![Exercises11a-11c]()
 ![Exercises11d-11h]()
