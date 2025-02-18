@@ -77,14 +77,53 @@ const object2 = {
 
 - best practice to use .addEventListener, rather than onclick='' in html attributes
 
+- .addEventListner('keydown') - we would add to the body element of the html since we're listening for anything on the webpage, and passes through the event as a parameter to the function in the listener
+- another eg. document.body.addEventListener('keydown', (event) => {console.log(event.key)}) - will display what key was pressed
+
+- document.querySelectorAll('[class]') - will give all the elements on the page that match the element selected
+
+
+# More features of Functions as values (more Array methods)
+- .filter() - goes through each value in the array and runs a function
+- this function creates a new array[], and anytime the function is run and returns true, that value is added to the new array
+- array.filer((value, index) => {
+  if(value >= 0){
+    return true;
+  } else {
+    return false;
+  }
+})
+- the above example the negative values are filtered
+- or can shorten to:
+- array.filter((value, index) => {
+  return value >= 0;
+})
+
+- .map() - goes through each value in array (parameters are (value in array, index of value in array)) and applies the function and inputs the result into a new array through return statements
+- eg array.map((value, index) => {
+  return value * 2;
+})
+- the above example will go through an array and return an array where the values from teh original are doubled
+
+- in the above example: since we don't use the index we can remove it.
+- since there is only one parameter now, the brackets are optional
+- since there is only one line of code, the curly brackets and return statement is optional and everything can be on one line
+- array.map(value => value * 2);
+- array.filer(value => value >= 0);
+
+# Closure
+- If a function has access to a value, it will always have access to that value
+- the value gets packaged together (enclosed) with the function
+- something that happens naturally, there are some features with closures (won't cover during this course)
+
 
 
 ## Exercises for Lesson 12
-![Exercises11a-11c]()
-![Exercises11d-11h]()
-![Exercises11i-11k]()
-![Exercises11l-11n]()
-![Exercises11o-11q]()
-![Exercises11r-11t]()
-![Exercises11u-11v]()
-![Exercises11w-11x]()
+![Exercises12a-12c]()
+![Exercises12d-12e]()
+![Exercises12f]()
+![Exercises12g-12i]()
+![Exercises12j-12l]()
+![Exercises12m-12o]()
+![Exercises12p-12s]()
+![Exercises12t-12x]()

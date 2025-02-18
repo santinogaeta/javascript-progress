@@ -7,6 +7,11 @@ const dateBoxElement = document.querySelector('.date-box');
 
 renderList();
 
+const addItem = document.querySelector('.js-add-button').addEventListener('click', () => {
+  addToDoItem();
+});
+
+
 function addToDoItem(){
   let item = toDoBoxElement.value;
   let dueDate = dateBoxElement.value;
@@ -34,13 +39,18 @@ function renderList(){
     <div class="todo-input-grid">
       <div>${name}</div> 
       <div>${date}</div>
-      <button class="delete-button" onclick="
-        toDoList.splice(${index}, 1);
-        renderList();"
+      <button class="delete-button js-delete-button"
         >Delete</button>
     </div>`;
   });
   todoListElement.innerHTML = list;
+
+  document.querySelectorAll('.js-delete-button')
+    .forEach((deleteButton, index) => {
+    deleteButton.addEventListener('click', () => {
+      removeItem(index);
+    })
+  })
 }
 
 function handleToDoEvent(key){

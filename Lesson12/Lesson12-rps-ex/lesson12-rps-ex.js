@@ -39,6 +39,16 @@ autoPlayButton.addEventListener('click', () => {
   autoPlay();
 });
 
+document.body.addEventListener('keydown', (event) => {
+  if(event.key === 'r'){
+    play('rock', pickComputerMove());
+  } else if(event.key === 'p'){
+    play('paper', pickComputerMove());
+  } else if(event.key === 's'){
+    play('scissors', pickComputerMove());
+  }
+})
+
 function pickComputerMove(){
   let pick = Math.random(); 
   if(pick < (1/3)){
