@@ -32,3 +32,20 @@ body {
   cursor: pointer;
   border: none;
 }
+
+.yes-button, .no-button {
+  font-size: 15px;
+  padding: 10px 20px;
+  margin: 0px 10px 0px 10px;
+  background: white;
+  cursor: pointer;
+  border: none;
+}
+
+.reset-message{
+width:fit-content;
+padding: 10px 15px;
+background-color: darkslategray;
+display: flex;
+align-items: center;
+}

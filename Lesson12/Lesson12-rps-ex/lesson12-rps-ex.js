@@ -7,6 +7,7 @@ const rockButton = document.querySelector(".rock-button");
 const paperButton = document.querySelector(".paper-button");
 const scissorsButton = document.querySelector(".scissors-button");
 const resetButton = document.querySelector(".reset-button");
+const resetMessage = document.querySelector(".reset-message");
 let isAutoplay = false;
 let intervalID;
 
@@ -32,7 +33,7 @@ const scissorsMove = scissorsButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
-  resetScore();
+  renderResetMessage();
 });
 
 autoPlayButton.addEventListener('click', () => {
@@ -46,6 +47,10 @@ document.body.addEventListener('keydown', (event) => {
     play('paper', pickComputerMove());
   } else if(event.key === 's'){
     play('scissors', pickComputerMove());
+  } else if(event.key === 'a'){
+    autoPlay();
+  } else if(event.key === 'Backspace'){
+    renderResetMessage();
   }
 })
 
@@ -101,6 +106,20 @@ function play(playerMove, computerMove){
   resultMessage.innerHTML = `You chose <img class="small-img" src="rps-images/${playerMove}-emoji.png">, the Computer chose <img class="small-img" src="rps-images/${computerMove}-emoji.png">, you ${result}!`;
   updateScore();
 };
+
+function renderResetMessage() {
+  resultMessage.innerHTML = `<div><p class="reset-message">
+    Are you sure you want to reset the score
+    <button class="yes-button">Yes</button>
+    <button class="no-button">No</button>
+  </p></div>`
+  document.querySelector('.yes-button').addEventListener('click', () => {
+    resetScore();
+  });
+  document.querySelector('.no-button').addEventListener('click', () => {
+    resultMessage.innerHTML = 'Score was not reset';
+  });
+}
 
 function resetScore() {
   score.winTotal = 0;
